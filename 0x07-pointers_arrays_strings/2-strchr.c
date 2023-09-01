@@ -3,7 +3,7 @@
  * _strchr - finds the first occurrence of a character
  * @s: pointer to buufer
  * @c: character to be found
- * Return: *S
+ * Return: *s
  */
 char *_strchr(char *s, char c)
 {
@@ -16,8 +16,6 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 	if (*s == c)
-                {
-                        return (s);
-                }
+		return (s);
 	return (0);
 }
