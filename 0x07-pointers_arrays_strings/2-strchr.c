@@ -3,7 +3,7 @@
  * _strchr - finds the first occurrence of a character
  * @s: pointer to buufer
  * @c: character to be found
- * Return: *s
+ * Return: *S
  */
 char *_strchr(char *s, char c)
 {
