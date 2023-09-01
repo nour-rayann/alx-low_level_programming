@@ -1,6 +1,10 @@
 #include "main.h"
-/** The _memset() function fills the first n bytes of the memory area
- *  pointed to by s with the constant byte b
+/**
+ *  _memset - function to be executed
+ *  @s: pointer to characters
+ *  @b: character to be printed
+ *  @n: number of bytes
+ *  Return: *s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
