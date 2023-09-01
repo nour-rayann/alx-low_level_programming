@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stddef.h>
 /**
  * _strchr - finds the first occurrence of a character
  * @s: pointer to buufer
@@ -19,7 +18,7 @@ char *_strchr(char *s, char c)
 	}
 	if (s[i - 1] != c)
 	{
-		return (s);
+		return (&s[i]);
 	}
 	return (0);
 }
