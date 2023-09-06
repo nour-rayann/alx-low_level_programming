@@ -10,7 +10,7 @@ char *str_concat(char *s1, char *s2)
 	int i, n, sum, m, b;
 	char *ptr;
 
-	if (s1 != NULL && s2 != NULL)
+	if (s1 != NULL || s2 != NULL)
 	{
 		for (i = 0; s1[i] != '\0'; i++)
 		;
@@ -38,6 +38,15 @@ char *str_concat(char *s1, char *s2)
 			ptr[m] = '\0';
 			return (ptr);
 		}
+	}
+	if (s1 == NULL && s2 == NULL)
+	{
+		s1 = "";
+		s2 = "";
+		ptr = (char *) malloc(2);
+		ptr[0] = *s1;
+		ptr[1] = *s2;
+		return (ptr);
 	}
 	return (NULL);
 }
