@@ -13,11 +13,10 @@ int _strlen(char *s)
 	{
 		for (i = 0; s[i] != '\0'; i++)
 		;
+		return (i);
 	}
 	else
-		i = 0;
-	return (i);
-
+		return (0);
 }
 
 /**
@@ -36,7 +35,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		x = _strlen(s1);
 	if (s2 != NULL)
 		y = _strlen(s2);
-	if (n > y)
+	if (n >= y)
 		n = y;
 	ptr = malloc((x + n + 1) * sizeof(char));
 
