@@ -31,17 +31,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int x = 0, y = 0, counter = 0, r;
 	char *ptr;
 
-	if (s1 == NULL && s2 == NULL)
-	{
-		ptr = malloc(1 * sizeof(char));
-		if (ptr != NULL)
-			ptr[0] = '\0';
-		return (ptr);
-	}
-	if (s1 != NULL)
-		x = _strlen(s1);
-	if (s2 != NULL)
-		y = _strlen(s2);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	x = _strlen(s1);
+	y = _strlen(s2);
 	if (n >= y)
 		n = y;
 	ptr = malloc((x + n + 1) * sizeof(char));
