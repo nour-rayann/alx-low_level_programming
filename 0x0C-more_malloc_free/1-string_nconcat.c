@@ -9,18 +9,19 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	unsigned int i, m, count, r;
-
-	for (i = 0; s1[i] != '\0'; i++)
-		;
-	for (m = 0; s2[m] != '\0'; m++)
-		;
+	unsigned int i, count, r;
+	
 	if (s1 == NULL)
 	{
 		s1 = "";
 		i = 1;
 	}
-	if (s1 == NULL)
+	else
+	{
+		for (i = 0; s1[i] != '\0'; i++)
+			;
+	}
+	if (s2 == NULL)
 	{
 		s2 = "";
 	}
