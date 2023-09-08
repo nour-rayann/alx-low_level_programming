@@ -6,26 +6,22 @@
  * Return: pointer to pointer
 */
 int **alloc_grid(int width, int height)
-{
-	if (width <= 0 || height <= 0)
-	{
-		return (NULL);
-	}
-	else if (width > 0 && height > 0)
-	{
-		int arr[width][height];
-		int i, n;
-		int **ptr = (int **) malloc ((width + height) * (sizeof(int)));
+{	
+	int i, n;
+	int **ptr;
 
+	if (width > 0 && height > 0)
+	{
+		ptr = malloc(height * sizeof(int));
+		
 		if (ptr != NULL)
 		{
-			for (i = 0; i < width; i++)
+			for (i = 0; i < height; i++)
 			{
-				for (n = 0; n < height; n++)
+				ptr[i] = malloc(width *sizeof(int));
+				for (n = 0; n < width; n++)
 				{
-					if (!(arr[i][n] >= 0))
-						arr[i][n] = 0;
-					**ptr = arr[i][n];
+					ptr[i][n] = 0;
 				}
 			}
 			return (ptr);
