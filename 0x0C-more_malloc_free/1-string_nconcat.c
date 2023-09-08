@@ -43,25 +43,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (ptr != NULL)
 	{
-		if (s1 != NULL)
-		{
 			for (; s1[counter] != '\0'; counter++)
 			{
 				ptr[counter] = s1[counter];
 			}
-		}
-		if (s2 != NULL)
-		{
 			for (r = 0; r < n && s2[r] != '\0'; r++)
 			{
 				ptr[counter] = s2[r];
 				counter++;
 			}
-		}
 		counter++;
 		ptr[counter] = '\0';
 		return (ptr);
-		free(ptr);
 	}
 	return (NULL);
 }
