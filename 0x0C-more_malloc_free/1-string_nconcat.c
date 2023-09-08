@@ -13,10 +13,13 @@ int _strlen(char *s)
 	{
 		for (i = 0; s[i] != '\0'; i++)
 		;
-		return (i);
 	}
-	else
-		return (0);
+	else if (s == NULL)
+	{
+		s = "";
+		i = 1;
+	}
+		return (i);
 }
 
 /**
@@ -31,10 +34,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int x = 0, y = 0, counter = 0, r;
 	char *ptr;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
 	x = _strlen(s1);
 	y = _strlen(s2);
 	if (n >= y)
