@@ -38,6 +38,7 @@ void flot(va_list va)
 void str(va_list va)
 {
 	char *strr = va_arg(va, char *);
+
 	strr != NULL ? printf("%s", strr) : printf("(nil)");
 }
 
@@ -48,18 +49,13 @@ void str(va_list va)
 */
 void print_all(const char * const format, ...)
 {
-	typedef struct callfun {
-        char c;
-        void (*fun)(va_list);
-    } callfun;
-
-	    callfun arr[]= {
-        { 'i', num },
-        { 'c', letter },
-        { 'f', flot },
-        { 's', str },
-        { '\0', NULL }
-    };
+	callfun arr[] = {
+		{ 'i', num },
+		{ 'c', letter },
+		{ 'f', flot },
+		{ 's', str },
+		{ '\0', NULL }
+	};
 
 	va_list va;
 	int i = 0, m;
@@ -83,5 +79,5 @@ void print_all(const char * const format, ...)
 		i++;
 	}
 	va_end(va);
-    printf("\n");
+	printf("\n");
 }
