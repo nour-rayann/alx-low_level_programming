@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _printBeforeMain - function of attribute construct executed before main
+ * printBeforeMain - function of attribute construct executed before main
  * Return: void
 */
 void __attribute__((constructor)) printBeforeMain()
