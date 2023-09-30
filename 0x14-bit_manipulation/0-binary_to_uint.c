@@ -9,18 +9,21 @@ unsigned int binary_to_uint(const char *b)
 {
 		unsigned int num = 0, len, convert = 1;
 
-		for (len = 0; b[len] != '\0'; len++)
-		;
-		while (len > 0)
+		if (b)
 		{
-			len--;
-			if (b[len] != '0' && b[len] != '1')
-				return (0);
-			if (b[len] == '1')
+			for (len = 0; b[len] != '\0'; len++)
+			;
+			while (len > 0)
 			{
-				num = num + convert;
+				len--;
+				if (b[len] != '0' && b[len] != '1')
+					return (0);
+				if (b[len] == '1')
+				{
+					num = num + convert;
+				}
+				convert = convert * 2;
 			}
-			convert = convert * 2;
 		}
 		return (num);
 }
