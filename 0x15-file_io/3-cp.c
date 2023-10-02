@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, fd_close;
-	char *buffer[1024];
+	char buffer[1024];
 	ssize_t fd_read, fd_write;
 
 	if (argc != 3)
@@ -47,6 +47,6 @@ int main(int argc, char *argv[])
 	fd_close = close(fd_to);
 	if (fd_close < 0)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd_from);
+		dprintf(2, "Error: Can't close fd %d\n", fd_to);
 		exit(100); }
 	return (0); }
